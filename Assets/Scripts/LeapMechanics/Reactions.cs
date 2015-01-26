@@ -6,7 +6,7 @@ public class Reactions : MonoBehaviour {
 
 	public static Controller controller;
 
-	FistCheck 	hndCheck;
+//	FistCheck 	hndCheck;
 	TurnWorld 	trnCheck;
 	//Resize 		rszCheck;
 	MouseMove 	MsCheck;
@@ -22,7 +22,7 @@ public class Reactions : MonoBehaviour {
 	void Update () {
 		//rszCheck.fingerCheck(controller);
 		MsCheck.Mouse(controller);
-		hndCheck.HandCheck(controller);
+//		hndCheck.HandCheck(controller);
 		trnCheck.Turning(controller);
 
 	
