@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+<<<<<<< HEAD
 using Leap;
+=======
+<<<<<<< HEAD
+//using Leap;
+=======
+>>>>>>> ba8e0dbcc7588b3206cc378255131b79a3096ab2
+>>>>>>> FETCH_HEAD
 
 public class TrackController : MonoBehaviour {
 	
