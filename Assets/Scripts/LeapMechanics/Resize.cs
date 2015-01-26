@@ -9,10 +9,10 @@ public class Resize : MonoBehaviour {
 //	Decimale decimaal;
 
 	void Awake(){
-		decimaal = new Decimale();
+//		decimaal = new Decimale();
 	//	parent = transform.parent.gameObject;
 	}
-	public void fingerCheck(Controller ctrl){
+	/*public void fingerCheck(Controller ctrl){
 		Frame frame = ctrl.Frame();
 		Frame previousFrame = ctrl.Frame(5);
 
@@ -46,12 +46,12 @@ public class Resize : MonoBehaviour {
 				Debug.Log("Rocuted");
 			}
 			Debug.Log ("Linker Finger = " + LeftFinger +  "Rechter finger = " + rightFinger);
-		}*/
+		}
 
 
 
 
-	}
+	}*/
 
 	public void EnLarge(){
 		parent.transform.localScale += new Vector3(0.01f, 0.01f, 0);
