@@ -9,7 +9,7 @@ public class DeathTimer : MonoBehaviour {
 	void Update () {
 		timer -= Time.deltaTime;
 		if(timer <= 0){
-			Application.LoadLevel("DeathScreen");
+			Application.LoadLevel("Finish");
 		}
 	}
 }

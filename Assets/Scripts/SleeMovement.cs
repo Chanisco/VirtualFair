@@ -26,7 +26,7 @@ public class SleeMovement : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(temp);
 		transform.Translate (Vector3.right * movement * Time.deltaTime * movementSpeed);
 		if(falling == false){
-			transform.Translate (Vector3.right * -movementDegrees * Time.deltaTime / 10);
+			transform.Translate (Vector3.right * -movementDegrees * Time.deltaTime / 20);
 		}
 		//transform.Rotate(Vector3.up, -1 * Time.deltaTime);
 		if(Input.GetKey(KeyCode.A)){
@@ -54,10 +54,6 @@ public class SleeMovement : MonoBehaviour {
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY;
 		falling = false;
 		explodeTimer = 0.5f;
-	}
-
-	void OnCollisionEnter(){
-		falling = false;
 	}
 
 	public float TrackZRotationDissorder(float trackZ){
