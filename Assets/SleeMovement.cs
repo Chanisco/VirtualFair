@@ -13,6 +13,12 @@ public class SleeMovement : MonoBehaviour {
 	}
 
 	void Update () {
+		if(movementDegrees > 40){
+			movementDegrees = 40;
+		}
+		else if(movementDegrees < -40){
+			movementDegrees = -40;
+		}
 		Vector3 temp = transform.rotation.eulerAngles;
 		temp.y = 180;
 		transform.rotation = Quaternion.Euler(temp);
