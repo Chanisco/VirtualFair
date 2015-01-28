@@ -9,7 +9,7 @@ public class SleeMovement : MonoBehaviour {
 	public float movementSpeed = 20;
 
 	void Start(){
-		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY;
 	}
 
 	void Update () {
