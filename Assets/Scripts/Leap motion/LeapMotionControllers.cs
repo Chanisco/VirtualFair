@@ -3,7 +3,7 @@ using System.Collections;
 using Leap;
 
 public class LeapMotionControllers : MonoBehaviour {
-	public static Controller controller;
+	public Controller controller;
 
 	TrackController TrackCheck;
 
