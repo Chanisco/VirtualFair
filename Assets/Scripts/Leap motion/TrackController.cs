@@ -12,7 +12,6 @@ public class TrackController : MonoBehaviour {
 
 	public void TurnAround (Controller ctrl) {
 		if(ctrl != null){
-			Debug.Log(TrackZRotationDissorder(transform.eulerAngles.z) < -40);
 		
 			Frame frame = ctrl.Frame();
 			

@@ -41,4 +41,16 @@ public class SleeMovement : MonoBehaviour {
 		rigidbody.constraints = RigidbodyConstraints.None;
 		falling = true;
 	}
+
+	public float TrackZRotationDissorder(float trackZ){
+		if(trackZ > 180){
+			trackZ -= 360;
+			return trackZ;
+			
+			
+		}else if(trackZ < 40){
+			return trackZ;
+		}
+		return trackZ;
+	}
 }
