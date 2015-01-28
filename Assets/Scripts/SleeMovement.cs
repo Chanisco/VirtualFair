@@ -7,6 +7,7 @@ public class SleeMovement : MonoBehaviour {
 	private bool falling = false;
 	private int movement = 0;
 	public float movementSpeed = 20;
+	private float explodeTimer = 0.5f;
 
 	void Start(){
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY;
@@ -35,6 +36,13 @@ public class SleeMovement : MonoBehaviour {
 		}
 		else {
 			movement = 0;
+		}
+		if(falling == true && explodeTimer > 0){
+			explodeTimer -= Time.deltaTime;
+		}
+		else if (explodeTimer <= 0){
+
+			Destroy(this);
 		}
 	}
 	void OnCollisionExit(){
