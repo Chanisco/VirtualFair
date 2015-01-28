@@ -25,7 +25,7 @@ public class SleeMovement : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(temp);
 		transform.Translate (Vector3.right * movement * Time.deltaTime * movementSpeed);
 		if(falling == false){
-			transform.Translate (Vector3.right * movementDegrees * Time.deltaTime / 45);
+			transform.Translate (Vector3.right * -movementDegrees * Time.deltaTime / 45);
 		}
 		//transform.Rotate(Vector3.up, -1 * Time.deltaTime);
 		if(Input.GetKey(KeyCode.A)){
@@ -48,5 +48,17 @@ public class SleeMovement : MonoBehaviour {
 	void OnCollisionExit(){
 		rigidbody.constraints = RigidbodyConstraints.None;
 		falling = true;
+	}
+
+	public float TrackZRotationDissorder(float trackZ){
+		if(trackZ > 180){
+			trackZ -= 360;
+			return trackZ;
+			
+			
+		}else if(trackZ < 40){
+			return trackZ;
+		}
+		return trackZ;
 	}
 }
