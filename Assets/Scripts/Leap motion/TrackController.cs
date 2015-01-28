@@ -3,31 +3,38 @@ using System.Collections;
 using Leap;
 
 public class TrackController : MonoBehaviour {
-	Color red 	= new Color(10,0,0);
-	Color green = new Color(0,10,0);
-	Color blue 	= new Color(0,0,10);
-	Color origin;
 
+
+	public SleeMovement playerDegrees;
+	bool Counted = false;
 
 	public Frame frame;
-	void Start(){
-		origin = renderer.material.color;
-	}
 
 	public void TurnAround (Controller ctrl) {
-
 		if(ctrl != null){
+			Debug.Log(TrackZRotationDissorder(transform.eulerAngles.z) < -40);
+		
 			Frame frame = ctrl.Frame();
 			
 			HandList h 		= frame.Hands;
 			float roll 		= frame.Hands[0].PalmNormal.Roll;
 			float rollRound = Mathf.Round(roll * 10);
-
+			if(TrackZRotationDissorder(transform.eulerAngles.z) > 40){
+				if(rollRound < 0){
+					rollRound = 0;
+				}
+			}else if(TrackZRotationDissorder(transform.eulerAngles.z) < -40){
+				if(rollRound > 0){
+					rollRound = 0;
+				}
+				
+			}
 			if(rollRound == 31){
 				//TODO GUI to show you need to insert hand
 
 			}else{
-				transform.Rotate(0,0,(rollRound * 10) * Time.deltaTime);
+				transform.Rotate(0,0,(-rollRound * 10) * Time.deltaTime);
+				playerDegrees.movementDegrees = TrackZRotationDissorder(transform.eulerAngles.z) * 2;
 			}
 
 			foreach(Hand hand in h){
@@ -37,20 +44,21 @@ public class TrackController : MonoBehaviour {
 				}
 			}
 
-			ColorCheck(rollRound);
-
 		}
 		
 	}
 
-	void ColorCheck(float roll){
-		if(roll == 31){
-			renderer.material.color = origin;
-		}else if(roll > -3 && roll < 0){
-			renderer.material.color = red;
-		}else if(roll > 0 && roll < 3){
-			renderer.material.color = green;
-		} 
+	public float TrackZRotationDissorder(float trackZ){
+		if(trackZ > 180){
+			trackZ -= 360;
+			return trackZ;
+
+
+		}else if(trackZ < 40){
+			return trackZ;
+		}
+		return trackZ;
 	}
+
 }
 
