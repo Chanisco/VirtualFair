@@ -1,18 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-<<<<<<< HEAD
 using Leap;
-=======
-<<<<<<< HEAD
-using Leap;
-=======
-<<<<<<< HEAD
-//using Leap;
-=======
->>>>>>> ba8e0dbcc7588b3206cc378255131b79a3096ab2
->>>>>>> FETCH_HEAD
->>>>>>> 2b2b2b786229ce573af83ebad8d837e46ca0be00
-
 public class TrackController : MonoBehaviour {
 	
 	public void TurnAround (Controller ctrl) {
