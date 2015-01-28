@@ -14,7 +14,7 @@ public class SleeMovement : MonoBehaviour {
 
 	void Update () {
 		Vector3 temp = transform.rotation.eulerAngles;
-		temp.y = 0;
+		temp.y = 180;
 		transform.rotation = Quaternion.Euler(temp);
 		transform.Translate (Vector3.right * movement * Time.deltaTime * movementSpeed);
 		if(falling == false){
