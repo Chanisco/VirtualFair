@@ -32,8 +32,8 @@ public class TrackController : MonoBehaviour {
 				//TODO GUI to show you need to insert hand
 
 			}else{
-				transform.Rotate(0,0,(-rollRound * 10) * Time.deltaTime);
-				playerDegrees.movementDegrees = TrackZRotationDissorder(transform.eulerAngles.z) * 2;
+				transform.Rotate(0,0,(-rollRound * 100) * Time.deltaTime);
+				playerDegrees.movementDegrees = TrackZRotationDissorder(transform.eulerAngles.z);
 			}
 
 			foreach(Hand hand in h){
@@ -58,6 +58,8 @@ public class TrackController : MonoBehaviour {
 		}
 		return trackZ;
 	}
+
+
 
 }
 
