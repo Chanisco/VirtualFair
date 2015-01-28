@@ -8,6 +8,7 @@ public class SleeMovement : MonoBehaviour {
 	private int movement = 0;
 	public float movementSpeed = 20;
 	private float explodeTimer = 0.5f;
+	public GameObject explosion;
 
 	void Start(){
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY;
@@ -41,13 +42,18 @@ public class SleeMovement : MonoBehaviour {
 			explodeTimer -= Time.deltaTime;
 		}
 		else if (explodeTimer <= 0){
-
+			GameObject explotion = (GameObject)Instantiate(explosion, new Vector3(transform.position.x,transform.position.y + 1.5f,transform.position.z), transform.rotation);
 			Destroy(this);
 		}
 	}
 	void OnCollisionExit(){
 		rigidbody.constraints = RigidbodyConstraints.None;
 		falling = true;
+	}
+	void OnCollisionEnter(){
+		rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY;
+		falling = false;
+		explodeTimer = 0.5f;
 	}
 
 	public float TrackZRotationDissorder(float trackZ){

@@ -12,7 +12,7 @@ public class DeathScreen : MonoBehaviour {
 		Application.LoadLevel("MainMenu");
     }
 	if (GUI.Button (new Rect (Screen.width * 0.4f, Screen.height * 0.65f, Screen.width * 0.2f, Screen.height * 0.1f), "Retry")){
-		Application.LoadLevel("Scene1");
+		Application.LoadLevel("Game");
 	}//Scene1 is de scene waar de game in zit.
   }
 }
